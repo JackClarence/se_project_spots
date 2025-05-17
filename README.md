@@ -12,4 +12,4 @@ This project serves as a prototype of what an image-sharing social media platfor
 
 This page is deployed to Github pages.
 
-Link:
+- [Deployment Link](https://jackclarence.github.io/se_project_spots/)
