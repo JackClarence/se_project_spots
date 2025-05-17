@@ -1,0 +1,32 @@
+.card__image{
+  height: 413px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.card__content{
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0 0;
+  line-height: 1.2;
+
+}
+
+.card__title{
+  margin: 0;
+}
+
+.card__heart-button{
+  background-image: url(../images/like-icon.svg);
+  width: 23px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  align-self: flex-end;
+}
+
+@media screen and (max-width: 627px){
+
+}
