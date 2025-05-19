@@ -16,6 +16,14 @@
 
 .card__title{
   margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #212121;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 353px;
 }
 
 .card__heart-button{
@@ -25,10 +33,21 @@
   border: none;
   background-color: transparent;
   align-self: flex-end;
+  opacity: 40%;
+}
+
+.card__heart-button:hover{
+  cursor: pointer;
+  opacity: 100%
 }
 
 @media screen and (max-width: 627px){
   .card__image{
-    height: 413px;
+    height: 288px;
+  }
+
+  .card__title{
+    font-size: 16px;
+    line-height: 100%;
   }
 }
