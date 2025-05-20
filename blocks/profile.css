@@ -2,7 +2,7 @@
   display: flex;
   justify-content: flex-start;
   gap: 20px;
-  padding-top: 3.4vh;
+  padding-top: 34px;
   padding-bottom: 20px;
   border-bottom: rgba(33, 33, 33, 0.4) solid 1px;
   line-height: 1;
@@ -24,7 +24,7 @@
   margin: 0 0 12px;
   line-height: 1;
   font-weight: 500;
-  font-style: 32px;
+  font-size: 32px;
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
@@ -41,7 +41,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  min-width: 420px;
+  max-width: 420px;
   font-size: 16px;
   line-height: 100%;
   font-weight: 500;
@@ -56,6 +56,10 @@
   display: flex;
   gap: 8px;
   opacity: 70%;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
+  color: #212121;
 }
 
 .profile__edit:hover{
@@ -93,7 +97,6 @@
   }
 
   .profile__avatar{
-    margin: 0 0 12px;
     height: 80px;
     width: 80px;
     margin: 0;
@@ -101,7 +104,7 @@
 
   .profile__name{
     font-size: 20px;
-    min-width: 288px;
+    max-width: 288px;
 
   }
 
@@ -111,7 +114,7 @@
 
   .profile__description{
     font-size: 16px;
-    min-width: 288px;
+    max-width: 288px;
   }
 
   .profile__edit{
