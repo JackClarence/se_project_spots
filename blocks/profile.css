@@ -60,6 +60,7 @@
   line-height: 1;
   font-weight: 500;
   color: #212121;
+  padding: 0;
 }
 
 .profile__edit:hover{
@@ -94,6 +95,7 @@
     max-width: 288px;
     text-align: center;
     gap: 12px;
+    padding-top: 20px;
   }
 
   .profile__avatar{
