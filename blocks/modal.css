@@ -11,10 +11,14 @@
   align-items: center;
   font-family: Poppins, Arial, sans-serif;
   margin: 0 10px;
+  opacity: 0;
+  transition:visibility 0s linear 0.3s, opacity 0.3s linear;
 }
 
 .modal__is-opened{
-  visibility: visible;
+  visibility:visible;
+  opacity: 1;
+  transition-delay: 0s;
 }
 
 .modal__container{
