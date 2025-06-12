@@ -1,29 +1,3 @@
-let initialCards = [
-  {
-    name: "Val Thorens",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
-  {
-    name: "Restaurant terrace",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
-  },
-  {
-    name: "An outdoor cafe",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
-  },
-  {
-    name: "A very long bridge, over the forest and through the trees",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
-  },
-  {
-    name: "Tunnel with morning light",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
-  },
-  {
-    name: "Mountain house",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
-];
 const editProfileBtn = document.querySelector(".profile__edit");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-button");
@@ -34,7 +8,7 @@ const profileNameInput = editProfileModal.querySelector("#profile-name-input");
 const profileDescriptionInput = editProfileModal.querySelector("#profile-description-input");
 const profileNameElement= document.querySelector(".profile__name");
 const profileDescriptionElement= document.querySelector(".profile__description");
-const editProfileForm = editProfileModal.querySelector(".modal__form");
+const editProfileForm = document.forms["edit-profile-form"];
 const addCardFormElement = newPostModal.querySelector(".modal__form");
 const addCardLinkInput = newPostModal.querySelector("#card-image-input");
 const addCardCaptionInput = newPostModal.querySelector("#profile-caption-input");
@@ -115,17 +89,13 @@ editProfileForm.addEventListener("submit", handleProfileFormSubmit);
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  console.log(addCardCaptionInput.value);
-  console.log(addCardLinkInput.value);
   const info = {};
   info.link = addCardLinkInput.value;
   info.name = addCardCaptionInput.value;
   cardsList.prepend(getCardElement(info));
   closeModal(newPostModal);
+  addCardCaptionInput.value = null;
+  addCardLinkInput.value = null;
 }
 
 addCardFormElement.addEventListener('submit', handleAddCardSubmit);
-
-initialCards.forEach(function (item){
-  console.log(item.name);
-})

@@ -168,4 +168,13 @@
   .modal__label{
     margin-bottom: 24px;
   }
+
+  .modal__caption{
+    font-size: 16px;
+  }
+
+  .modal__image{
+    max-width: 288px;
+    max-height: none;
+  }
 }
