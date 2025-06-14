@@ -49,11 +49,11 @@ initialCards.forEach( function (item) {
 });
 
 function openModal(modal){
-  modal.classList.add("modal__is-opened");
+  modal.classList.add("modal_is-opened");
 }
 
 function closeModal(modal){
-  modal.classList.remove("modal__is-opened");
+  modal.classList.remove("modal_is-opened");
 }
 
 editProfileBtn.addEventListener("click", function (){
