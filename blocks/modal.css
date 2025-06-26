@@ -94,6 +94,10 @@
   color: #2121214d;
 }
 
+.modal__input_state_error{
+  border: 1px solid rgba(255, 0, 0, 0.6);
+}
+
 .modal__submit-button{
   max-width: 156px;
   background-color: #212121;
@@ -107,6 +111,10 @@
 .modal__submit-button:hover{
   opacity: 80%;
   cursor: pointer;
+}
+
+.modal__submit-button_inactive{
+  opacity: 50%;
 }
 
 .modal__label{
@@ -135,6 +143,15 @@
   padding: 4px 8px;
   font-size: 20px;
   align-self: flex-start;
+}
+
+.modal__error{
+  display: block;
+  color: #FF0000;
+  opacity: 70%;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 8px;
 }
 
 @media screen and (max-width: 627px) {

@@ -18,6 +18,21 @@ const imageModal = document.querySelector("#image-modal");
 const modalImage = imageModal.querySelector(".modal__image");
 const modalCaption = imageModal.querySelector(".modal__caption");
 const imageModalCloseBtn = imageModal.querySelector(".modal__close-button");
+const cardSubmitBtn = document.querySelector(".modal__submit-button");
+const modals = document.querySelectorAll(".modal");
+
+modals.forEach((modal) => {
+  modal.addEventListener("click", function(evt){
+    if (evt.target == modal){
+      closeModal(modal);
+    }
+  })
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeModal(modal);
+    }
+});
+})
 
 function getCardElement(data){
   const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
@@ -93,9 +108,10 @@ function handleAddCardSubmit(evt) {
   info.link = addCardLinkInput.value;
   info.name = addCardCaptionInput.value;
   cardsList.prepend(getCardElement(info));
+  evt.target.reset();
+  disableButton(cardSubmitBtn, settings);
+  enableValidation(settings);
   closeModal(newPostModal);
-  addCardCaptionInput.value = null;
-  addCardLinkInput.value = null;
 }
 
 addCardFormElement.addEventListener('submit', handleAddCardSubmit);
