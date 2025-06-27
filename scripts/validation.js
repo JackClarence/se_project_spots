@@ -54,6 +54,12 @@ const enableValidation = (config) => {
   });
 };
 
+const resetValidation = (formEl, inputList, config) => {
+  inputList.forEach((input) => {
+    hideInputError(formEl, input, config)
+  })
+}
+
 const checkInputValidity = (formEl, inputEl, config) => {
   if (!inputEl.validity.valid) {
     showInputError(formEl, inputEl, inputEl.validationMessage, config);

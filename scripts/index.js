@@ -21,18 +21,23 @@ const imageModalCloseBtn = imageModal.querySelector(".modal__close-button");
 const cardSubmitBtn = document.querySelector(".modal__submit-button");
 const modals = document.querySelectorAll(".modal");
 
+/*function clickClose(evt, modal){
+  if (evt.target == modal){
+    closeModal(modal);
+  }
+}
+
+function clicker(evt, modal){
+  clickClose(evt, modal);
+}
+/*
 modals.forEach((modal) => {
-  modal.addEventListener("click", function(evt){
-    if (evt.target == modal){
-      closeModal(modal);
-    }
-  })
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeModal(modal);
-    }
-});
-})
+  if(modal.classList.contains("modal_is-opened")){
+    modal.addEventListener("click", clicker(e, modal))
+  } else{
+    modal.removeEventListener("click", clicker)
+  }
+})*/
 
 function getCardElement(data){
   const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
@@ -65,16 +70,29 @@ initialCards.forEach( function (item) {
 
 function openModal(modal){
   modal.classList.add("modal_is-opened");
+  modal.addEventListener("click", function clickClose(evt){
+    if (evt.target == modal){
+      closeModal(modal);
+    }
+  })
+  document.addEventListener("keydown", function escClose(event){
+    if (event.key === "Escape") {
+      closeModal(modal);
+    }
+});
 }
 
 function closeModal(modal){
   modal.classList.remove("modal_is-opened");
+  modal.removeEventListener("click", clickClose);
+  modal.removeEventListener("keydown", escClose);
 }
 
 editProfileBtn.addEventListener("click", function (){
-  openModal(editProfileModal);
   profileNameInput.value=profileNameElement.textContent;
   profileDescriptionInput.value=profileDescriptionElement.textContent;
+  resetValidation(editProfileForm, [profileNameInput, profileDescriptionInput], settings)
+  openModal(editProfileModal);
 });
 
 editProfileCloseBtn.addEventListener("click", function(){
@@ -110,7 +128,6 @@ function handleAddCardSubmit(evt) {
   cardsList.prepend(getCardElement(info));
   evt.target.reset();
   disableButton(cardSubmitBtn, settings);
-  enableValidation(settings);
   closeModal(newPostModal);
 }
 
