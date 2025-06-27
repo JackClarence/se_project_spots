@@ -70,12 +70,12 @@ initialCards.forEach( function (item) {
 
 function openModal(modal){
   modal.classList.add("modal_is-opened");
-  modal.addEventListener("click", function clickClose(evt){
-    if (evt.target == modal){
-      closeModal(modal);
-    }
-  })
-  document.addEventListener("keydown", function escClose(event){
+  modal.addEventListener("click", (evt) => {
+  if (evt.target == modal){
+    closeModal(modal);
+  }
+});
+  document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeModal(modal);
     }
@@ -130,5 +130,7 @@ function handleAddCardSubmit(evt) {
   disableButton(cardSubmitBtn, settings);
   closeModal(newPostModal);
 }
+
+enableValidation(settings);
 
 addCardFormElement.addEventListener('submit', handleAddCardSubmit);
