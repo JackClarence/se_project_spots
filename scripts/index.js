@@ -68,17 +68,25 @@ initialCards.forEach( function (item) {
   cardsList.prepend(createdCard);
 });
 
-function openModal(modal){
-  modal.classList.add("modal_is-opened");
-  modal.addEventListener("click", (evt) => {
+function clickClose(evt, modal){
   if (evt.target == modal){
     closeModal(modal);
   }
-});
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
+}
+
+function escClose(evt, modal){
+  if (evt.key === "Escape") {
       closeModal(modal);
-    }
+  }
+}
+
+function openModal(modal){
+  modal.classList.add("modal_is-opened");
+  modal.addEventListener("click", (evt) => {
+    clickClose(evt, modal);
+});
+  document.addEventListener("keydown", (evt) => {
+    escClose(evt, modal);
 });
 }
 
