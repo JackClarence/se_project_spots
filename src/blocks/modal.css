@@ -154,6 +154,52 @@
   margin-top: 8px;
 }
 
+.modal__form-delete-buttons{
+  display: flex;
+  justify-content: center;
+}
+
+.modal_delete-form-button{
+  width: 156px;
+}
+
+.modal_delete-form-button:hover{
+  opacity: 100%;
+}
+
+.modal_delete-btn{
+  background-color: #FF6565;
+  margin-right: 20px;
+}
+
+.modal_delete-btn:hover{
+  background-color: #FF3333;
+}
+
+.modal_cancel-btn{
+  border-color: #212121;
+  border-width: 1px;
+  border-style: solid;
+  color: #212121;
+  background-color: #FFF;
+}
+
+.modal_cancel-btn:hover{
+  background-color: #212121;
+  color: #FFF;
+}
+
+.modal_close-button_delete{
+  top: 0;
+  right: -50px;
+  background-image: url(../images/close-button_dark.svg);
+  opacity: 100%;
+}
+
+.modal_close-button_delete:hover{
+  opacity: 40%;
+}
+
 @media screen and (max-width: 627px) {
   .modal__title{
     margin-bottom: 32px;
